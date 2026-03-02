@@ -1,78 +1,76 @@
-# LangChain Basic Agent
+# AI Agent Implementations using LangChain
 
-A minimal reference implementation of a **single AI agent** built using **LangChain**, **Groq LLM**, and **Tavily Search**.
+This repository contains multiple **AI agent implementations**
+built using **LangChain** and modern Large Language Models (LLMs).
 
-This project demonstrates how a Large Language Model (LLM) can move beyond text generation and autonomously interact with external tools through an agent execution loop.
-
----
-
-## Overview
-
-This agent can:
-
-- Understand user queries
-- Reason using an LLM
-- Decide when external information is required
-- Automatically invoke tools
-- Observe results and generate responses
-
-LangChain manages the internal agent execution cycle.
+Each implementation demonstrates how agents reason,
+interact with external systems, and execute tasks autonomously.
 
 ---
-
-## Architecture
-User Query
-↓
-Agent
-↓
-LLM Reasoning (Groq)
-↓
-Tool Selection (Tavily Search)
-↓
-Observation
-↓
-Final Response
-
-
----
-
-## LangChain Components Used
-
-### Model
-Groq LLM used for reasoning and decision-making.
-
-### Tools
-Tavily Search enables real-time web information retrieval.
-
-### Agent
-Acts as the decision-maker that determines whether to respond directly or invoke a tool.
-
-### Executor
-Runs the iterative execution loop:
-Decide → Act → Observe → Repeat
-
-## Project Structure
-├── app.py
-├── requirements.txt
-├── .env.example
-└── README.md
-
 
 ## Setup Instructions
 
-### 1. Clone Repository
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/langchain-basic-agent.git
-cd langchain-basic-agent
+git clone https://github.com/<your-username>/ai-agent-implementations.git
+cd ai-agents-implementation
+```
 
-### 2. Install Dependencies
+### 2. Create Virtual Environment
+
+```bash
+
+Create a Python virtual environment:
+
+python -m venv venv
+
+Activate the environment:
+
+Windows
+
+venv\Scripts\activate
+
+Mac / Linux
+
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
+### 4. Configure Environment Variables
 
-### 3. Configure Environment Variables
-Create a .env file in the project root:
+```bash
+Create a .env file in the project root.
+
+You can copy from .env.example:
+
+cp .env.example .env
+
+Add your API keys:
+
 GROQ_API_KEY=your_groq_api_key
 TAVILY_API_KEY=your_tavily_api_key
+```
+### 5. Run an Agent
 
-### 4. Run the Agent
-python app.py
+```bash
+Example:
+
+python agents/basic_single_agent.py
+Tech Stack
+
+LangChain
+
+Groq LLM
+
+Tavily Search API
+
+Python
+```
+### Purpose
+
+This repository serves as a collection of practical examples
+for understanding and building AI agents using modern frameworks.
